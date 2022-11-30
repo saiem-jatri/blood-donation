@@ -16,5 +16,31 @@
       "id":0,
       "name":"Cakes"
     }
+  ],
+  "tipsCardData": [
+    {
+      "headings": "The day before",
+      "listData": [
+           "Have an iron-rich diet such as beans, spinach or meat, poultry.",
+           "Have an iron-rich diet such as beans, spinach or meat, 1.",
+           "Have an iron-rich diet such as beans, spinach or meat, 2."
+      ]
+    },
+    {
+      "headings": "The day before1",
+      "listData": [
+        "dshkuhdf.",
+        "dshgvkzsuldfgvliubeuv",
+        "sdljkghdulfhvbudhfubvhu"
+      ]
+    },
+    {
+      "headings": "The day before2",
+      "listData": [
+        "Have an iron-rich diet such as beans, spinach or meat, poultry.",
+        "Have an iron-rich diet such as beans, spinach or meat, 1.",
+        "Have an iron-rich diet such as beans, spinach or meat, 2."
+      ]
+    }
   ]
 }

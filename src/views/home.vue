@@ -1,27 +1,27 @@
 <template>
     <div class="h-full">
-<Banner/>
-<div class="mt-20 lg:mt-0">
-<Slider/>
-<div class="mt-5 lg:mt-0">
-  <div class="w-full mt-6 lg:mt-20">
-    <Accordion1
-        v-for="item in items"
-        :heading="item.details"
-        :details="item.title"
-        :uniqeId="item.id"
-        :selectedIndex="selectedAccordion"
-        @setAccordionIndex="setAccordionIndex"
-    />
+      <Banner/>
+      <div class="mt-20 lg:mt-0">
+        <Slider/>
+        <div class="mt-5 lg:mt-0">
+          <div class="w-full mt-6 lg:mt-20">
+            <Accordion1
+                v-for="item in items"
+                :heading="item.title"
+                :details="item.details"
+                :uniqeId="item.id"
+                :selectedIndex="selectedAccordion"
+                @setAccordionIndex="setAccordionIndex"
+            />
 
-  </div>
-</div>
-<div class="mt-5 lg:mt-0">
-<Tips/>
-  <Dummy/>
-</div>
-</div>
-</div>
+          </div>
+        </div>
+        <div class="mt-5 lg:mt-0">
+            <Tips/>
+          <Dummy/>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -38,18 +38,18 @@ export default{
         selectedAccordion:null,
         items:[
           {
-            title:' It was a pleasant evening at The Society Achievers Awards. Our founder Mr. Jagadeesh (Jai) Yelimanchili our ambassa… ',
-            details:'haha',
+            title:'Blood Donation Is A Great Act Of Kindness',
+            details:'Blood Donation Is The Act Of Giving Blood To Someone Who Needs It. It Is Not Just About Giving Blood, But It Is An Act Of Kindness That Saves The Lives Of Hundreds Of People. These Fifteen Minutes Of Your Life Can Save Someone’s Entire Life.',
             id:'1'
           },
           {
-            title:' It was a pleasant evening at The Society Achievers Awards. Our founder Mr. Jagadeesh (Jai) Yelimanchili our ambassa… ',
-            details:'haha two',
+            title:'Blood Donation Is A Small Act Of Kindness That Does Great And Big Wonders',
+            details:'You Can’t Even Imagine That Donating One Bag Of Blood Can Be So Beneficial To The Human Race. Donating The Blood Without Expecting Or Asking For Any Money Or Gesture Is A Great Act Of Kindness, And If You Are 18 Years Old Or Above, You Should Definitely Take Part In This Act Of Kindness.',
             id:'2'
           },
           {
-            title:' It was a pleasant evening at The Society Achievers Awards. Our founder Mr. Jagadeesh (Jai) Yelimanchili our ambassa… ',
-            details:'haha three',
+            title:' Blood Donation Costs You Nothing, But It Can Mean The World To Someone In Need.',
+            details:'About 38% Of The United State’s Population Can Donate Blood, But Only 10% Do So. The Reason Why The Percentage Of People Who Donate Is So Low Is Because Of Not Being Aware Of Its Benefits. Many People Think That It Is Harmful Or Will Cause Weakness In The Body. Still, In Reality, It Is Beneficial Because It Reduces The Risk Of Damaged Liver, Pancreas, And Cardiovascular Diseases.',
             id:'3'
           }
         ]
