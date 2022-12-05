@@ -21,4 +21,17 @@ export default {
             console.log(error);
         }
     },
+
+
+
+    async getAllBlogs ({ commit }) {
+        try {
+            const res = await axios.get(`http://localhost:3000/blogsData`);
+            console.log("blogData===>",res.data)
+            commit('setAllBlogData',res.data)
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }

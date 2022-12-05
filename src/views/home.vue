@@ -4,21 +4,23 @@
       <div class="mt-20 lg:mt-0">
         <Slider/>
         <div class="mt-5 lg:mt-0">
-          <div class="w-full mt-6 lg:mt-20">
-            <Accordion1
-                v-for="item in items"
-                :heading="item.title"
-                :details="item.details"
-                :uniqeId="item.id"
-                :selectedIndex="selectedAccordion"
-                @setAccordionIndex="setAccordionIndex"
-            />
+          <div class="w-full mt-6 lg:mt-20 p-4">
+  <base-card>
+    <p>Why we should donate blood!?</p>
+    <Accordion1
+        v-for="item in items"
+        :heading="item.title"
+        :details="item.details"
+        :uniqeId="item.id"
+        :selectedIndex="selectedAccordion"
+        @setAccordionIndex="setAccordionIndex"
+    />
 
+  </base-card>
           </div>
         </div>
         <div class="mt-5 lg:mt-0">
             <Tips/>
-          <Dummy/>
         </div>
       </div>
     </div>
@@ -30,9 +32,10 @@ import Slider from '../components/Slider.vue'
 import Accordion1 from '../components/Accordion1.vue'
 import Tips from '../components/Tips.vue'
 import Dummy from '../components/Dummy.vue'
+import BaseCard from "../components/BaseCard.vue";
 export default{
     name:'Home',
-    components:{Banner,Slider,Accordion1,Tips,Dummy},
+    components:{BaseCard, Banner,Slider,Accordion1,Tips,Dummy},
   data(){
       return{
         selectedAccordion:null,

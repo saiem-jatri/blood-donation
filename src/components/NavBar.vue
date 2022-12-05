@@ -4,7 +4,7 @@
         <img src="../assets/images/logos/main-logo.png" class="w-[180px]" alt="">
       </router-link>  
         <div class="flex items-center gap-x-2 lg:gap-x-4">
-            <router-link to="">Blog</router-link>
+            <router-link to="/blog">Blog</router-link>
             <router-link to="">Gallery</router-link>
             <div class="bg-[#b91816] p-4 lg:p-2 rounded-md text-white text-center flex justify-center items-center w-full lg:w-[200px]">
                 <div class="flex justify-center items-center rounded-full gap-x-4">

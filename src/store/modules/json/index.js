@@ -8,7 +8,8 @@ export default{
     state(){
         return{
             items:[],
-            cardItems:[]
+            cardItems:[],
+            blogs:[]
         }
     },
     getters,

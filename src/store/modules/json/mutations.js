@@ -4,5 +4,8 @@ export default{
     },
     setAllCardItems:(state,payloads)=>{
         state.cardItems = payloads
+    },
+    setAllBlogData:(state,payloads)=>{
+        state.blogs = payloads
     }
 }

@@ -6,4 +6,7 @@ export default{
     allICardtems:(state)=> {
         return state.cardItems;
     },
+    allBlogItems:(state=>{
+        return state.blogs
+    })
 }
