@@ -33,9 +33,10 @@ import Accordion1 from '../components/Accordion1.vue'
 import Tips from '../components/Tips.vue'
 import Dummy from '../components/Dummy.vue'
 import BaseCard from "../components/BaseCard.vue";
+import Register from "../views/register.vue"
 export default{
     name:'Home',
-    components:{BaseCard, Banner,Slider,Accordion1,Tips,Dummy},
+    components:{BaseCard, Banner,Slider,Accordion1,Tips,Dummy,Register},
   data(){
       return{
         selectedAccordion:null,
