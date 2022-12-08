@@ -34,4 +34,15 @@ export default {
             console.log(error);
         }
     },
+
+
+    async addBlogsData({commit},payload) {
+        try{
+            const res = await axios.post(`http://localhost:3000/blogsData`, {...payload});
+            console.log(payload)
+            commit('setBlogsData', res.data)
+        } catch (error){
+            console.log(error);
+        }
+    },
 }

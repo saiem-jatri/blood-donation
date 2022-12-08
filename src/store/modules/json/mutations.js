@@ -7,5 +7,8 @@ export default{
     },
     setAllBlogData:(state,payloads)=>{
         state.blogs = payloads
+    },
+    setBlogsData:(state,payloads)=>{
+        state.blogs.push(payloads)
     }
 }
