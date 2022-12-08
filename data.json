@@ -54,7 +54,8 @@
       "donarphone": "017366402635",
       "donarInfo": "The need for blood affects us all. Eight out of ten people need blood or blood products at some time in our lives. One out of every ten patients in hospital requires blood transfusion. The number of blood donations that patients receive depends on their medical condition. Although an average of three donations is transfused to a patient, some patients require many more.",
       "donarId": 1,
-      "totalDonateTime": 5
+      "totalDonateTime": 5,
+      "bloodGroup": "o+"
     },
     {
       "donarName": "Joyonto Karmakar",
@@ -62,7 +63,8 @@
       "donarphone": "017366402635",
       "donarInfo": "The current study was conducted in six geographically and socioeconomically distinct areas in Jiangsu Province, China. Jiangsu, which is located in the eastern coastal area in China. Although its economic and social development is higher than the average level of China, large geographical disparities exist across different cities. Six prefecture-level cities, whose economic development varied between the southern, central, and northern Jiangsu, were randomly selected. Mobile blood collection vehicles used in these cities were selected as the recruitment sites. Before the field survey, we recruited about 20 medical students to be trained as surveyors by the local administrators and research team members. In our university, community services are required. ",
       "donarId": 2,
-      "totalDonateTime": 5
+      "totalDonateTime": 5,
+      "bloodGroup": "b+"
     },
     {
       "donarName": "Hossain Ballayet",
@@ -70,33 +72,8 @@
       "donarphone": "017366402635",
       "donarInfo": "Blood is essential to help patients survive surgeries, cancer treatment, chronic illnesses, and traumatic injuries. This lifesaving care starts with one person making a generous donation. The need for blood is constant. But only about 3% of age-eligible people donate blood yearly",
       "donarId": 3,
-      "totalDonateTime": 5
-    },
-    {
-      "name": "Shahed Ahamed",
-      "age": "25",
-      "info": "information",
-      "id": "4",
-      "phone": "01736640265",
-      "totalDonation": "5"
-    },
-    {
-      "donarName": "Shahed Ahamed",
-      "donarAge": "25",
-      "donarInfo": "sfghrdsth",
-      "donarId": "5",
-      "donarphone": "01736640265",
-      "totalDonateTime": "5",
-      "id": "jvojNCO"
-    },
-    {
-      "donarName": "saiem",
-      "donarAge": "26",
-      "donarInfo": "dfhbfdxghnxfdg",
-      "donarId": "6",
-      "donarphone": "01838843065",
-      "totalDonateTime": "5",
-      "id": "KEtrxMV"
+      "totalDonateTime": 5,
+      "bloodGroup":"ab+"
     }
   ]
 }

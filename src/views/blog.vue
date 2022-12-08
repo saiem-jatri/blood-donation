@@ -5,7 +5,8 @@
       <p class="text-gray-500 text-center text-lg lg:text-lg mt-2">Here are some of our hero who have donate blood recently</p>
       <div  class="border-2 p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-2 lg:gap-x-4 mt-4">
         <div v-for="blogData in allBlogs" :key="blogData.id">
-          <div class="p-20 bg-orange-200">
+          <div class="p-20 bg-orange-200 relative">
+            <div class="absolute z-0 top-2 right-2 bg-green-700 text-green-100 py-2 px-4 rounded-full text-xs font-bold">{{blogData.bloodGroup}}</div>
             <h3 class="text-orange-400 font-bold mb-4 text-xl md:text-3xl">{{blogData.donarName}}</h3>
             <div class="bg-white rounded-lg shadow-2xl md:flex">
               <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8" alt="Laptop on Desk" class="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
@@ -14,6 +15,7 @@
                 <h2 class="font-bold text-sm mb-2 text-orange-700">Donar Phone: {{blogData.donarphone}}</h2>
                 <h2 class="font-bold text-sm mb-2 text-orange-700">Donar Age: {{blogData.donarAge}}</h2>
                 <h2 class="font-bold text-sm mb-2 text-orange-700">Donar Age: {{blogData.totalDonateTime}}</h2>
+                <h2 class="font-bold text-sm mb-2 text-orange-700">Blood Group: {{blogData.bloodGroup}}</h2>
 
                 <div class="flex justify-end">
                   <button @click.prevent="openDetails(blogData.donarId)" class="text-black text-sm animate-pulse">more info...</button>
@@ -41,7 +43,7 @@
         </div>
       </div>
     </div>
-    <h2 class="text-orange-400 font-bold mt-4 text-xl md:text-3xl">Thank you for your regular contribution to our blood donation drive. We appreciate your efforts. Thank you</h2>
+    <h2 class="text-orange-400 font-bold mt-4 text-xl lg:text-2xl">Thank you for your regular contribution to our blood donation drive. We appreciate your efforts. Thank you</h2>
   </div>
 
 </template>

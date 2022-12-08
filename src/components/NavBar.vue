@@ -1,5 +1,5 @@
 <template>
-    <div class="px-2 lg:px-4 flex justify-between items-center bg-white py-4 shadow-lg sticky top-0">
+    <div class="px-2 lg:px-4 flex justify-between items-center bg-white py-4 shadow-lg sticky top-0 z-50">
       <router-link to="/">
         <img src="../assets/images/logos/main-logo.png" class="w-[180px]" alt="">
       </router-link>  
