@@ -95,12 +95,9 @@ const addBlogsData = () => {
     donarAage.isValid = true;
     formIsValid.value = false;
   }
-  if (donarPhone.val.includes('0,1,2,3,4,5,6,7,8,9')) {
-    donarPhone.isValid = false;
-    formIsValid.value = false;
-  }else if(donarPhone.val === ''){
+  if (donarPhone.val === '') {
     donarPhone.isValid = true;
-    formIsValid.value = true;
+    formIsValid.value = false;
   }
   if (donarInfo.val === '') {
     donarInfo.isValid = true;

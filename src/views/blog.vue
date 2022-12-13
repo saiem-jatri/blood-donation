@@ -3,7 +3,7 @@
     <div class="px-4 lg:px-[100px]">
       <p class="text-center text-2xl lg:text-4xl italic text-black"> Blood Donar </p>
       <p class="text-gray-500 text-center text-lg lg:text-lg mt-2">Here are some of our hero who have donate blood recently</p>
-      <div  class="border-2 p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-2 lg:gap-x-4 mt-4">
+      <div  class="border-2 p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-2 gap-y-2 lg:gap-x-4 mt-4">
         <div v-for="blogData in allBlogs" :key="blogData.id">
           <div class="p-20 bg-orange-200 relative">
             <div class="absolute z-0 top-2 right-2 bg-green-700 text-green-100 py-2 px-4 rounded-full text-xs font-bold">{{blogData.bloodGroup}}</div>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="p-4 fle justify-center items-center border">
-        <div v-if="Object.keys(filterItem).length === 0">
+        <div v-if="Object.keys(filterItem).length === 0 && allBlogs.length">
           <div class="p-6">
             <p class="font-bold text-sm mb-2 text-yellow-700">{{allBlogs[0].donarName}}</p>
             <h2 class="font-bold text-sm mb-2 text-orange-700">{{allBlogs[0].donarInfo}}</h2>
@@ -70,7 +70,7 @@ const openDetails =(openId)=>{
 
 </script>
 
-<style>
+<style scoped>
 .border{
   position: relative;
   font-size: 18px;
