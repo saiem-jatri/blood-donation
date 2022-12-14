@@ -18,7 +18,7 @@
 
 <!--      table start-->
       <!-- component -->
-      <section class="mx-auto p-6 font-mono">
+      <section class="mx-auto p-6 p-[10px] font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
           <div class="w-full overflow-x-auto">
             <table class="w-full">
@@ -32,7 +32,7 @@
               </tr>
               </thead>
               <tbody class="bg-white">
-              <tr v-for="blog in filterItems" :key="blog.id" class="text-gray-700 text-left">
+              <tr v-for="blog in visibleDonars" :key="blog.id" class="text-gray-700 text-left">
                 <td class="px-4 py-3 border text-left">
                   <div class="flex items-center text-sm ">
                     <div class="relative w-8 h-8 mr-3 rounded-full md:block">
@@ -56,19 +56,32 @@
           </div>
         </div>
       </section>
+
+      <!-- pagination -->
+      <div v-if="totalPages > 0" >
+        {{totalPages}}
+        <div style="display: flex; justify-content: center;">
+          <button v-if="showPreviousLnk" @click="updatePageNumber(currentPage - 1)">previous</button>
+          <div v-for="page in totalPages" @click="updatePageNumber(page)" style="padding: 5px; background: #ddd; margin-right: 2px; cursor: pointer;">{{page}}</div>
+          <button v-if="showNextLnk" @click="updatePageNumber(currentPage + 1)">Next {{currentPage}}</button>
+        </div>
+      </div>
     </div>
 </template>
 
 <script setup>
 import store from '../store';
-import {computed, ref , watch} from "vue";
+import {computed, onBeforeMount, onMounted, ref, watch} from "vue";
 store.dispatch('json/getAllBlogs')
 const sortBy = ref('o+')
+const currentPage = ref(0)
+const pageSize = ref(3)
+const visibleDonars = ref('')
+const searchString = ref('')
 const allBlogs = computed(()=>{
   return store.getters['json/allBlogItems']
 })
 
-const searchString = ref('')
 watch(sortBy, (currentValue) => {
         if(currentValue === 'o+'){
      allBlogs.value = allBlogs.value.sort((a)=>{
@@ -81,9 +94,9 @@ watch(sortBy, (currentValue) => {
         })
       }
 
-     else if(currentValue === 'b+'){
+     else if(currentValue === 'ab+'){
           allBlogs.value = allBlogs.value.sort((b)=>{
-          if(b.bloodGroup === 'b+'){
+          if(b.bloodGroup === 'ab+'){
             console.log(b.bloodGroup)
             return 1;
           }else{
@@ -91,22 +104,67 @@ watch(sortBy, (currentValue) => {
           }
         })
       }
+
+        else if(currentValue === 'b+'){
+          allBlogs.value = allBlogs.value.sort((b)=>{
+            if(b.bloodGroup === 'b+'){
+              console.log(b.bloodGroup)
+              return 1;
+            }else{
+              return -1
+            }
+          })
+        }
     });
-const totalPerforme = ref(false)
-watch(totalPerforme, (value) =>{
-  if(value && filterItems.value.totalDonateTime > 4){
-    totalPerforme.value = true
-  }
-})
 
 
   const  filterItems = computed (()=>{
+    console.log("all items-====>",searchString.value)
       if(searchString.value == '') {
         return allBlogs.value;
       } else {
         return allBlogs.value.filter(items=> items.bloodGroup.toLowerCase().includes(searchString.value))
       } 
     })
+
+onBeforeMount(()=>{
+  updateVisibleDonars()
+
+})
+
+const updatePageNumber = (pageNumber)=>{
+  currentPage.value = pageNumber
+  updateVisibleDonars()
+}
+
+const updateVisibleDonars = ()=>{
+  const initialSortingDonars = allBlogs.value.slice(currentPage.value,(currentPage.value * pageSize.value) + pageSize.value)
+      .sort((a,b)=>{
+        if(a.donarName > b.donarName) return 1;
+        if(a.donarName < b.donarName) return -1;
+        return 0;
+      })
+
+   visibleDonars.value = initialSortingDonars
+  console.log("initial donars",initialSortingDonars)
+  console.log("visible donars",visibleDonars.value)
+
+  if(visibleDonars.value === 0 && currentPage.value > 0){
+    updatePageNumber(currentPage.value - 1);
+  }
+}
+
+const totalPages = computed(()=>{
+  return Math.ceil(filterItems.value.length / pageSize.value)
+})
+
+const showPreviousLnk = computed(()=>{
+  return currentPage.value === 1 ? false : true
+})
+
+const showNextLnk = computed(()=>{
+  return currentPage.value === totalPages.value ? false : true
+})
 
 
 
