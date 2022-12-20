@@ -6,7 +6,10 @@ export default{
     allICardtems:(state)=> {
         return state.cardItems;
     },
-    allBlogItems:(state=>{
+    allBlogItems:((state)=>{
         return state.blogs
+    }),
+    getFilteredHistory:((state)=>{
+        return state.blogHistory
     })
 }

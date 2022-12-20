@@ -29,9 +29,11 @@
                 <th class="px-4 py-3">Phone</th>
                 <th class="px-4 py-3">Blood Group</th>
                 <th class="px-4 py-3">Total Donate</th>
+                <th class="px-4 py-3">History</th>
               </tr>
               </thead>
               <tbody class="bg-white">
+              {{ visibleDonars }}
               <tr v-for="blog in visibleDonars" :key="blog.id" class="text-gray-700 text-left">
                 <td class="px-4 py-3 border text-left">
                   <div class="flex items-center text-sm ">
@@ -50,6 +52,10 @@
                 </td>
                 <td class="px-4 py-3 text-sm border">{{blog.bloodGroup}}</td>
                 <td class="px-4 py-3 text-sm border"><span :class="blog.totalDonateTime > 4 ? 'font-extrabold text-pink-900': ''">{{blog.totalDonateTime}}</span></td>
+                <td class="px-4 py-3 text-sm border">
+                  {{blog.id}}
+                  <router-link :to="'/donar/'+blog.id">History</router-link>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -117,20 +123,21 @@ watch(sortBy, (currentValue) => {
         }
     });
 
-
   const  filterItems = computed (()=>{
-    console.log("all items-====>",searchString.value)
+
       if(searchString.value == '') {
         return allBlogs.value;
       } else {
+        console.log('allBlogs.value', allBlogs.value.filter(items=> items.bloodGroup.toLowerCase().includes(searchString.value)))
         return allBlogs.value.filter(items=> items.bloodGroup.toLowerCase().includes(searchString.value))
       } 
     })
 
 onBeforeMount(()=>{
+  console.log(allBlogs.value)
   updateVisibleDonars()
-
 })
+
 
 const updatePageNumber = (pageNumber)=>{
   currentPage.value = pageNumber
@@ -138,7 +145,8 @@ const updatePageNumber = (pageNumber)=>{
 }
 
 const updateVisibleDonars = ()=>{
-  const initialSortingDonars = allBlogs.value.slice(currentPage.value,(currentPage.value * pageSize.value) + pageSize.value)
+
+  const initialSortingDonars = allBlogs.value.slice(currentPage.value * pageSize.value ,(currentPage.value * pageSize.value) + pageSize.value)
       .sort((a,b)=>{
         if(a.donarName > b.donarName) return 1;
         if(a.donarName < b.donarName) return -1;
@@ -146,6 +154,7 @@ const updateVisibleDonars = ()=>{
       })
 
    visibleDonars.value = initialSortingDonars
+
   console.log("initial donars",initialSortingDonars)
   console.log("visible donars",visibleDonars.value)
 
@@ -153,6 +162,12 @@ const updateVisibleDonars = ()=>{
     updatePageNumber(currentPage.value - 1);
   }
 }
+
+
+watch(allBlogs, () => {
+  console.log('teasda')
+  updateVisibleDonars();
+}, {immediate: true})
 
 const totalPages = computed(()=>{
   return Math.ceil(filterItems.value.length / pageSize.value)

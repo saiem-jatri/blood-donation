@@ -9,7 +9,8 @@ export default{
         return{
             items:[],
             cardItems:[],
-            blogs:[]
+            blogs:[],
+            blogHistory:{}
         }
     },
     getters,
