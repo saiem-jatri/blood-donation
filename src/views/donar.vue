@@ -30,10 +30,10 @@
                 <th class="px-4 py-3">Blood Group</th>
                 <th class="px-4 py-3">Total Donate</th>
                 <th class="px-4 py-3">History</th>
+                <th class="px-4 py-3">Remove</th>
               </tr>
               </thead>
               <tbody class="bg-white">
-              {{ visibleDonars }}
               <tr v-for="blog in visibleDonars" :key="blog.id" class="text-gray-700 text-left">
                 <td class="px-4 py-3 border text-left">
                   <div class="flex items-center text-sm ">
@@ -56,6 +56,10 @@
                   {{blog.id}}
                   <router-link :to="'/donar/'+blog.id">History</router-link>
                 </td>
+
+                <td class=" border">
+                  <button @click="deleteBlog(blog.id)" class="text-[#b91816] text-sm text-center font-bold w-full flex justify-center">Delete</button>
+                  </td>
               </tr>
               </tbody>
             </table>
@@ -78,7 +82,6 @@
 <script setup>
 import store from '../store';
 import {computed, onBeforeMount, onMounted, ref, watch} from "vue";
-store.dispatch('json/getAllBlogs')
 const sortBy = ref('o+')
 const currentPage = ref(0)
 const pageSize = ref(3)
@@ -87,6 +90,10 @@ const searchString = ref('')
 const allBlogs = computed(()=>{
   return store.getters['json/allBlogItems']
 })
+const allData = ()=>{
+  store.dispatch('json/getAllBlogs')
+}
+allData()
 
 watch(sortBy, (currentValue) => {
         if(currentValue === 'o+'){
@@ -128,7 +135,6 @@ watch(sortBy, (currentValue) => {
       if(searchString.value == '') {
         return allBlogs.value;
       } else {
-        console.log('allBlogs.value', allBlogs.value.filter(items=> items.bloodGroup.toLowerCase().includes(searchString.value)))
         return allBlogs.value.filter(items=> items.bloodGroup.toLowerCase().includes(searchString.value))
       } 
     })
@@ -181,9 +187,9 @@ const showNextLnk = computed(()=>{
   return currentPage.value === totalPages.value ? false : true
 })
 
-
-
-
-
-
+const deleteBlog = (delId)=>{
+  console.log("clicked",delId)
+  store.dispatch('json/deleteBlog',delId)
+  allData()
+}
 </script>
