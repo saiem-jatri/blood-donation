@@ -64,7 +64,14 @@
       "donarInfo": "The current study was conducted in six geographically and socioeconomically distinct areas in Jiangsu Province, China. Jiangsu, which is located in the eastern coastal area in China. Although its economic and social development is higher than the average level of China, large geographical disparities exist across different cities. Six prefecture-level cities, whose economic development varied between the southern, central, and northern Jiangsu, were randomly selected. Mobile blood collection vehicles used in these cities were selected as the recruitment sites. Before the field survey, we recruited about 20 medical students to be trained as surveyors by the local administrators and research team members. In our university, community services are required. ",
       "id": 2,
       "totalDonateTime": 5,
-      "bloodGroup": "b+"
+      "bloodGroup": "b+",
+      "donateHistory": [
+        {
+          "lastGivingDate": "2018-12-10T13:49:51.141Z",
+          "TotalGiving": 5,
+          "status": true
+        }
+      ]
     },
     {
       "donarName": "Hossain Ballayet",
@@ -73,6 +80,13 @@
       "donarInfo": "Blood is essential to help patients survive surgeries, cancer treatment, chronic illnesses, and traumatic injuries. This lifesaving care starts with one person making a generous donation. The need for blood is constant. But only about 3% of age-eligible people donate blood yearly",
       "id": 3,
       "totalDonateTime": 5,
+      "donateHistory": [
+        {
+          "lastGivingDate": "2019-12-10T13:49:51.141Z",
+          "TotalGiving": 5,
+          "status": true
+        }
+      ],
       "bloodGroup": "ab+"
     },
     {
@@ -83,6 +97,13 @@
       "donarId": "66",
       "donarphone": 1777897456,
       "totalDonateTime": "7",
+      "donateHistory": [
+        {
+          "lastGivingDate": "2020-12-10T13:49:51.141Z",
+          "TotalGiving": 5,
+          "status": true
+        }
+      ],
       "id": 4
     },
     {
@@ -93,6 +114,13 @@
       "donarId": "5",
       "donarphone": 1785604316,
       "totalDonateTime": "2",
+      "donateHistory": [
+        {
+          "lastGivingDate": "2021-12-10T13:49:51.141Z",
+          "TotalGiving": 5,
+          "status": true
+        }
+      ],
       "id": 5
     },
     {
@@ -103,6 +131,13 @@
       "donarId": "6",
       "donarphone": 1946945516,
       "totalDonateTime": "1",
+      "donateHistory": [
+        {
+          "lastGivingDate": "2022-12-10T13:49:51.141Z",
+          "TotalGiving": 5,
+          "status": false
+        }
+      ],
       "id": 6
     }
   ]

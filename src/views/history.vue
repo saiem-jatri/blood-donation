@@ -1,7 +1,12 @@
 <template>
   <div>
     <h2 class="text-2xl font-bold  text-center">heloo this is history page</h2>
-    {{singleBlog}}
+
+    <div  v-for="history in singleBlog.donateHistory">
+        <p>{{history.lastGivingDate}}</p>
+        <p>{{history.TotalGiving}}</p>
+        <p>{{history.status}}</p>
+    </div>
   </div>
 </template>
 
