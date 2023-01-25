@@ -44,12 +44,6 @@
 
    </form>
  </div>
- <Dropdown
-   :options="options"
-   :placeholder="propsPlaceholder"
-   >
-
-   </Dropdown>
     </div>
 </template>
 
@@ -57,23 +51,8 @@
 import Dropdown from "../components/Dropdown.vue"
 import { reactive } from "@vue/reactivity";
 import store from "../store/index.js";
-import {ref} from "vue";
 
-const propsPlaceholder = ref("Enter a string")
-const options = reactive([
-  {
-    option:"apple",
-    name:"apple"
-  },
-  {
-    option:"bananna",
-    name:"bananna"
-  },
-  {
-    option:"mango",
-    name:"mango"
-  }
-])
+
 
     const donarName = reactive({
         val: '',

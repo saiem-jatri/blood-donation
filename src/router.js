@@ -4,6 +4,7 @@ import Blog from './views/blog.vue'
 import Register from './views/register.vue'
 import Donar from './views/donar.vue'
 import History from './views/history.vue'
+import DropDown from './views/down.vue'
 
 
 const router = createRouter({
@@ -13,6 +14,7 @@ const router = createRouter({
     { path: '/blog', component: Blog },
     { path: '/register', component: Register },
     { path: '/donar', component: Donar },
+    { path: '/dropDown', component: DropDown },
     {
       path: '/donar/:id',
       component: History,
