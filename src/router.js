@@ -5,6 +5,7 @@ import Register from './views/register.vue'
 import Donar from './views/donar.vue'
 import History from './views/history.vue'
 import DropDown from './views/down.vue'
+import Testing from './views/testing.vue'
 
 
 const router = createRouter({
@@ -15,6 +16,7 @@ const router = createRouter({
     { path: '/register', component: Register },
     { path: '/donar', component: Donar },
     { path: '/dropDown', component: DropDown },
+    { path: '/testing', component: Testing },
     {
       path: '/donar/:id',
       component: History,
